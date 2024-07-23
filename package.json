@@ -1,0 +1,8 @@
+{
+  "name": "showdown-wheel",
+  "description": "Online slots game built with Pixi.JS",
+  "version": "1.0.0",
+  "author": "Vilius Dzemyda <dev@viliusdzemyda.com>",
+  "license": "MIT",
+  "scripts": {}
+}

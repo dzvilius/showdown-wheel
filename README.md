@@ -21,7 +21,7 @@ npm run build
   - [ ] Integrate Pixi.JS dependency and add default configuration
   - [ ] Read Pixi.JS documentation to learn how to create effects with sprite images
   - [ ] ...
-  - [ ] Add a button to start the game
+  - [x] Add button placeholder
   - [ ] Add wheel spin animation
-  - [ ] Implement API logic
+  - [x] Add API endpoint to serve random number for the wheel position
   - [ ] ...

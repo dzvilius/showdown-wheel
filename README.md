@@ -2,9 +2,20 @@
 
 Online slots game built with Pixi.JS
 
+### Quick Start
+
+```bash
+git clone git@github.com:dzvilius/showdown-wheel.git
+npm install
+npm start
+npm run build
+```
+
+### Todo
+
   - [x] Set up Git project repository with basic app template
   - [x] Create app preview domain with automatic Git deployment
-  - [ ] Install dependencies, set up project structure, and enable local development
+  - [x] Install dependencies, set up project structure, and enable local development
   - [ ] Integrate Pixi.JS dependency and add default configuration
   - [ ] Read Pixi.JS documentation to learn how to create effects with sprite images
   - [ ] ...

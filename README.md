@@ -2,6 +2,8 @@
 
 Online slots game built with Pixi.JS
 
+[Live Preview](https://showdown-wheel.pages.dev/)
+
 ### Quick Start
 
 ```bash

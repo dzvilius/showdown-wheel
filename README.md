@@ -19,9 +19,11 @@ npm run build
   - [x] Create app preview domain with automatic Git deployment
   - [x] Install dependencies, set up project structure, and enable local development
   - [x] Integrate Pixi.JS dependency and add default configuration
-  - [ ] Read Pixi.JS documentation to learn how to create effects with sprite images
-  - [ ] ...
+  - [x] Read Pixi.JS documentation to learn how to create effects with sprite images
+  - [ ] Add header text animation
+  - [ ] Add wheel winning position marker
   - [x] Add button placeholder
-  - [ ] Add wheel spin animation
+  - [x] Add wheel spin animation
   - [x] Add API endpoint to serve random number for the wheel position
-  - [ ] ...
+  - [ ] Make header animation responsive
+  - [ ] Make wheel responsive

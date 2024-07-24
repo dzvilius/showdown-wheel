@@ -24,15 +24,25 @@ body {
 }
 
 .GameButton {
-  display: block;
   padding: 12px 48px;
   border: 0;
   border-radius: 6px;
-  background: green;
+  background-color: green; // temp
   text-align: center;
   color: #fff;
   font-size: 22px;
   cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darkgreen; // temp
+  }
+
+  &.disabled {
+    background-color: #cccccc; // temp
+    color: green; // temp
+    cursor: not-allowed;
+  }
 }
 
 .GameContent {

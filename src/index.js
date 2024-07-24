@@ -36,11 +36,18 @@ import './styles/main.scss';
   // Flag to control the rotation.
   let spinning = false;
 
-  // Variable to track the rotation speed
-  const rotationSpeed = 0.1;
-
   // Duration to spin the wheel
-  const spinDuration = 2000; // 2 seconds
+  const spinDuration = 3000; // 3 seconds
+
+  // Define the possible stop angles for the wheel
+  const angles = [0, Math.PI / 2, Math.PI, (3 * Math.PI) / 2]; // 0, 90, 180, 270 degrees
+
+  // Set the initial/default wheel position (marker = 1 at the top)
+  wheel.rotation = 0;
+
+  // Function to get a random angle from the possible angles
+  const getRandomAngle = () =>
+    angles[Math.floor(Math.random() * angles.length)];
 
   // Add a click event listener to the spin button
   spinButton.addEventListener('click', () => {
@@ -48,19 +55,35 @@ import './styles/main.scss';
       // Start spinning if not already spinning
       spinning = true;
       spinButton.disabled = true; // Disable the button while spinning
+      spinButton.classList.add('disabled'); // Add the disabled class
 
-      // Spin for a set duration
-      setTimeout(() => {
-        spinning = false;
-        spinButton.disabled = false; // Re-enable the button after spinning
-      }, spinDuration);
-    }
-  });
+      // Calculate the target rotation
+      const targetAngle = getRandomAngle() + (Math.PI * 8); // Ensure multiple spins (e.g., 4 full rotations)
 
-  // Update the wheel rotation based on the flag
-  app.ticker.add((time) => {
-    if (spinning) {
-      wheel.rotation += rotationSpeed * time.deltaTime;
+      // Capture the start time
+      const startTime = Date.now();
+
+      // Function to update the rotation
+      const updateRotation = () => {
+        const elapsedTime = Date.now() - startTime;
+        if (elapsedTime < spinDuration) {
+          // Ease-out quadratic function for smoother stopping
+          const easing = (t) => 1 - Math.pow(1 - t, 2);
+          const t = elapsedTime / spinDuration;
+          const angle = easing(t) * targetAngle;
+          wheel.rotation = angle % (Math.PI * 2);
+          requestAnimationFrame(updateRotation);
+        } else {
+          // Ensure it lands exactly on the target angle
+          wheel.rotation = targetAngle % (Math.PI * 2);
+          spinning = false;
+          spinButton.disabled = false; // Re-enable the button after spinning
+          spinButton.classList.remove('disabled'); // Remove the disabled class
+        }
+      };
+
+      // Start the rotation update
+      updateRotation();
     }
   });
 })();

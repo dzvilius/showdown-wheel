@@ -53,6 +53,21 @@ body {
   align-items: center;
 }
 
+.GameMarker {
+  background-color: rgba(#140D3D, 0.8);
+  background-image: url('../assets/img/marker.png');
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 120px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -40px;
+  border-radius: 100px;
+}
+
 .GameWheel {
   width: 100%;
 }

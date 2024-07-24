@@ -21,9 +21,10 @@ npm run build
   - [x] Integrate Pixi.JS dependency and add default configuration
   - [x] Read Pixi.JS documentation to learn how to create effects with sprite images
   - [ ] Add header text animation
-  - [ ] Add wheel winning position marker
+  - [x] Add wheel winning position marker
   - [x] Add button placeholder
   - [x] Add wheel spin animation
   - [x] Add API endpoint to serve random number for the wheel position
   - [ ] Make header animation responsive
   - [ ] Make wheel responsive
+  - [ ] Create external API endpoint

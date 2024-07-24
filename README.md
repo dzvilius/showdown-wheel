@@ -13,6 +13,10 @@ npm start
 npm run build
 ```
 
+### API Endpoint
+
+[flax-evanescent-cap.glitch.me/api/spin](https://flax-evanescent-cap.glitch.me/api/spin)
+
 ### Todo
 
   - [x] Set up Git project repository with basic app template
@@ -27,4 +31,4 @@ npm run build
   - [x] Add API endpoint to serve random number for the wheel position
   - [ ] Make header animation responsive
   - [ ] Make wheel responsive
-  - [ ] Create external API endpoint
+  - [x] Create external API endpoint

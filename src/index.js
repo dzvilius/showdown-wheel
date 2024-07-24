@@ -64,8 +64,8 @@ function getPetName(number) {
   // Function to fetch the random value from the server and get the corresponding angle
   const fetchRandomAngle = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/spin'); // Local API
-      // const response = await fetch('/api/spin'); // Production API
+      // const response = await fetch('http://localhost:3000/api/spin'); // Local API
+      const response = await fetch('https://flax-evanescent-cap.glitch.me/api/spin'); // Production API
       const data = await response.json();
       console.log('Result:', getPetName(data.value))
       const index = data.value - 1; // Map the value to an index (1-4 to 0-3)

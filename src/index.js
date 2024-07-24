@@ -1,6 +1,21 @@
 import { Application, Assets, Sprite } from 'pixi.js';
 import './styles/main.scss';
 
+function getPetName(number) {
+  switch (number) {
+      case 1:
+          return 'Orange Pet';
+      case 2:
+          return 'Pink Pet';
+      case 3:
+          return 'White Pet';
+      case 4:
+          return 'Red Pet';
+      default:
+          return 'Invalid Number'; // In case the number is not between 1 and 4
+  }
+}
+
 (async () => {
   const wheelContainer = document.getElementById('game-wheel');
   const spinButton = document.getElementById('game-button');
@@ -40,25 +55,37 @@ import './styles/main.scss';
   const spinDuration = 3000; // 3 seconds
 
   // Define the possible stop angles for the wheel
+  // 1 = 'Orange Pet', 2 = 'Pink Pet', 3 = 'White Pet', 4 = 'Red Pet'
   const angles = [0, Math.PI / 2, Math.PI, (3 * Math.PI) / 2]; // 0, 90, 180, 270 degrees
 
   // Set the initial/default wheel position (marker = 1 at the top)
   wheel.rotation = 0;
 
-  // Function to get a random angle from the possible angles
-  const getRandomAngle = () =>
-    angles[Math.floor(Math.random() * angles.length)];
+  // Function to fetch the random value from the server and get the corresponding angle
+  const fetchRandomAngle = async () => {
+    try {
+      //const response = await fetch('http://localhost:3000/api/spin'); // Local API
+      const response = await fetch('/api/spin'); // Production API
+      const data = await response.json();
+      console.log('Result:', getPetName(data.value))
+      const index = data.value - 1; // Map the value to an index (1-4 to 0-3)
+      return angles[index];
+    } catch (error) {
+      console.error('Error fetching random angle:', error);
+      return angles[0]; // Fallback to the first angle in case of error
+    }
+  };
 
   // Add a click event listener to the spin button
-  spinButton.addEventListener('click', () => {
+  spinButton.addEventListener('click', async () => {
     if (!spinning) {
       // Start spinning if not already spinning
       spinning = true;
       spinButton.disabled = true; // Disable the button while spinning
       spinButton.classList.add('disabled'); // Add the disabled class
 
-      // Calculate the target rotation
-      const targetAngle = getRandomAngle() + (Math.PI * 8); // Ensure multiple spins (e.g., 4 full rotations)
+      // Fetch the target rotation angle from the server
+      const targetAngle = (await fetchRandomAngle()) + (Math.PI * 8); // Ensure multiple spins (e.g., 4 full rotations)
 
       // Capture the start time
       const startTime = Date.now();

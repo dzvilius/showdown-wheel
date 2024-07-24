@@ -48,13 +48,11 @@ body {
 .GameContent {
   position: relative;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .GameWheel {
-  position: relative;
-  height:auto;
   width: 100%;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
 }

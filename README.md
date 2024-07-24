@@ -18,7 +18,7 @@ npm run build
   - [x] Set up Git project repository with basic app template
   - [x] Create app preview domain with automatic Git deployment
   - [x] Install dependencies, set up project structure, and enable local development
-  - [ ] Integrate Pixi.JS dependency and add default configuration
+  - [x] Integrate Pixi.JS dependency and add default configuration
   - [ ] Read Pixi.JS documentation to learn how to create effects with sprite images
   - [ ] ...
   - [x] Add button placeholder

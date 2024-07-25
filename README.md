@@ -24,7 +24,7 @@ npm run build
   - [x] Install dependencies, set up project structure, and enable local development
   - [x] Integrate Pixi.JS dependency and add default configuration
   - [x] Read Pixi.JS documentation to learn how to create effects with sprite images
-  - [ ] Add header text animation
+  - [x] Add header text animation
   - [x] Add wheel winning position marker
   - [x] Add button placeholder
   - [x] Add wheel spin animation

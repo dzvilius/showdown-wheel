@@ -19,7 +19,7 @@ export const setupWheel = async () => {
   // Create a PixiJS application
   const wheelApp = new Application();
 
-  // Create and configure application
+  // Init and configure application
   await wheelApp.init({
     background: '#140D3D',
     resizeTo: wheelContainer,

@@ -35,13 +35,17 @@ export const setupWheel = async () => {
 
   // Resize sprite while maintaining aspect ratio
   const resizeSprite = () => {
-    const { clientWidth: containerWidth, clientHeight: containerHeight } = wheelContainer;
+    const { clientWidth: containerWidth, clientHeight: containerHeight } =
+      wheelContainer;
     const aspectRatio = wheelTexture.width / wheelTexture.height;
 
     wheelSprite.width = containerWidth;
     wheelSprite.height = containerWidth / aspectRatio;
     wheelSprite.anchor.set(0.5);
-    wheelSprite.position.set(wheelApp.screen.width / 2, wheelApp.screen.height / 2);
+    wheelSprite.position.set(
+      wheelApp.screen.width / 2,
+      wheelApp.screen.height / 2
+    );
 
     wheelApp.renderer.resize(containerWidth, containerHeight);
   };

@@ -1,43 +1,23 @@
 body {
-  font-family: "Roboto", sans-serif;
-  // background-image: url('../assets/img/header.png');
-  // background-size: 100% auto;
-  // background-repeat: no-repeat;
-  // background-color: #140D3D;
-  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #140d3d;
+  padding: 0 0 100px 0;
   margin: 0;
 }
 
-.GameHeader {
-  // background-image: url('../assets/img/showdown-off.png');
-  // background-size: 100% auto;
-  // background-repeat: no-repeat;
-  max-width: 1000px;
-  height: 400px;
+.GameAnimation {
+  display: block;
+  width: 100%;
+  max-width: 802px;
+  height: 336px;
   margin: 0 auto;
-  position: relative;
-  // width: 100%;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // overflow: hidden;
 }
-
-// .GameAnimation {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   width: 100%;
-//   display: none;
-// }
 
 .GameControl {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #140D3D;
   padding: 30px 0;
   z-index: 2;
 }
@@ -46,7 +26,7 @@ body {
   padding: 12px 48px;
   border: 0;
   border-radius: 6px;
-  background-color: green; // temp
+  background-color: green;
   text-align: center;
   color: #fff;
   font-size: 22px;
@@ -54,12 +34,12 @@ body {
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: darkgreen; // temp
+    background-color: darkgreen;
   }
 
   &.disabled {
-    background-color: #cccccc; // temp
-    color: green; // temp
+    background-color: #cccccc;
+    color: green;
     cursor: not-allowed;
   }
 }
@@ -73,7 +53,7 @@ body {
 }
 
 .GameMarker {
-  background-color: rgba(#140D3D, 0.8);
+  background-color: rgba(#140d3d, 0.8);
   background-image: url('../assets/img/marker.png');
   background-size: auto 100%;
   background-position: center;

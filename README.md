@@ -9,8 +9,9 @@ Online slots game built with Pixi.JS
 ```bash
 git clone git@github.com:dzvilius/showdown-wheel.git
 npm install
-npm start
+npm run dev
 npm run build
+npm run start
 ```
 
 ### API Endpoint

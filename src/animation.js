@@ -111,7 +111,7 @@ export const setupAnimation = async () => {
       setTimeout(() => {
         sprite.alpha = 0;
         sprite.visible = true;
-        const duration = 500; // Faster animation
+        const duration = 100;
         const startTime = Date.now();
         const animate = () => {
           const elapsed = Date.now() - startTime;
@@ -132,43 +132,39 @@ export const setupAnimation = async () => {
       }, delay);
     });
 
-  // Flashing animation for boltSprite
-  const flashSprite = (sprite) => {
-    const flash = () => {
-      sprite.alpha = sprite.alpha === 1 ? 0 : 1;
-      setTimeout(flash, 500); // Adjust the flash interval as needed
-    };
-    flash();
+  // Function to make a sprite flash constantly
+  const startFlashing = (sprite, interval = 100) => {
+    let visible = true;
+    setInterval(() => {
+      sprite.visible = visible;
+      visible = !visible;
+    }, interval);
   };
 
   // Start animation sequence
-  console.log('Starting animation sequence...');
   await animateSprite(showdownOffSprite);
-  console.log('showdownOffSprite animated.');
 
   await Promise.all([
     animateSprite(vegasSprite, 0, true),
     animateSprite(slotsSprite, 0, true),
   ]);
 
-  console.log('vegasSprite and slotsSprite animated.');
-
   // Ensure vegasSprite and slotsSprite remain visible
   vegasSprite.visible = true;
   slotsSprite.visible = true;
 
+  // Show boltSprite
+  boltSprite.visible = true;
+  boltSprite.alpha = 1;
+
   // Start flashing boltSprite
-  console.log('Starting boltSprite flash...');
-  flashSprite(boltSprite);
+  startFlashing(boltSprite);
 
   // Animate letters
   for (const [i, letter] of showdownLetters.entries()) {
     await animateSprite(letter, i * 100);
-    console.log(`Letter ${i} animated.`);
   }
 
   // Animate mustDropSprite
-  console.log('Animating mustDropSprite...');
   await animateSprite(mustDropSprite);
-  console.log('mustDropSprite animated.');
 };

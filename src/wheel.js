@@ -59,8 +59,8 @@ export const setupWheel = async () => {
 
   const fetchRandomAngle = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/spin'); // Local API
-      //const response = await fetch('https://flax-evanescent-cap.glitch.me/api/spin'); // Production API
+      //const response = await fetch('http://localhost:3000/api/spin'); // Local API
+      const response = await fetch('https://flax-evanescent-cap.glitch.me/api/spin'); // Production API
       const { value } = await response.json();
       console.log('Result:', getPetName(value));
       return angles[value - 1] || angles[0];
